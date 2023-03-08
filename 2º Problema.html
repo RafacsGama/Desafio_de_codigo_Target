@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2º Problema: Sequência Fibonacci.</title>
+    <script>
+        function seqFibonacci(){
+            let termo = parseInt(document.getElementById('numero').value);
+            let resposta = document.getElementById('resposta');
+            let penultimo = 0, ultimo = 1;
+            let numero; 
+            if(termo<=2) numero = termo -1;
+            else{
+                count = 3;
+                while(count <= termo){
+                    numero = ultimo + penultimo;
+                    penultimo = ultimo;
+                    ultimo = numero;
+                    count++; 
+                }
+            }
+            resposta.innerHTML=numero
+        }
+    </script>
+</head>
+<body>
+    Exibir até o termo: <input id="numero" type="number">
+    <button onclick="seqFibonacci()"> Exibir</button>
+    <div id="resposta"></div>
+</body>
+</html>
